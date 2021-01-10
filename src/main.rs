@@ -1,3 +1,10 @@
+use blockchainlib::*;
+
 fn main() {
-    println!("Hello, cryptocurrency!");
+    let mut block = Block::new(0, 0, vec![0; 32], 0, "Genesis block".to_owned());
+
+    let hash = block.hash();
+
+    block.hash = hash;
+    println!("{:?}", &block);
 }
